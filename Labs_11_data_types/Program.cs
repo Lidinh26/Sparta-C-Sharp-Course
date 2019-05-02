@@ -39,7 +39,7 @@ namespace Labs_11_data_types
             int ii = 1234567890; //32 bit default 
 
             //LONG
-            long l = 1234567890123456789 //64 bit default
+            long l = 1234567890123456789; //64 bit default
 
             //UNSIGNED integers : all positive
             ushort ushort1 = 123;

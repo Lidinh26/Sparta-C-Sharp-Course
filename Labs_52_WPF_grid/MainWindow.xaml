@@ -1,0 +1,39 @@
+﻿<Window x:Class="Labs_52_WPF_grid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labs_52_WPF_grid"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="auto" Width="auto">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Button01" Background="BlueViolet" Grid.Row="0" Grid.Column="0" Click="Button01_Click"/>
+        <ListBox x:Name="ListBox01" Grid.Row="3" Grid.Column="0" Background="Aqua"/>
+        <ListBox x:Name="ListBox02" Grid.Row="3" Grid.Column="1" Background="DarkRed" SelectionChanged="ListBox02_SelectionChanged" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="ID - {0} - Name {1} - City {2}">
+                                <Binding Path="CustomerID" /> 
+                                <Binding Path="ContactName" />
+                                <Binding Path="City" /> 
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
+    </Grid>
+</Window>

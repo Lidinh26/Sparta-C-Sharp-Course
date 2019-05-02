@@ -1,0 +1,19 @@
+﻿<Window x:Class="Lab_55_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_55_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="499.315" Width="573.459">
+    <Grid Margin="0,0,3.6,0">
+        <ProgressBar x:Name="Progress_bar" HorizontalAlignment="Left" Height="28" Margin="10,0,-0.4,0" VerticalAlignment="Bottom" Width="784"/>
+        <Button Content="Roll" HorizontalAlignment="Left" Height="78" Margin="191,294,0,0" VerticalAlignment="Top" Width="203" Click="Button_Click_1"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="221" Margin="28,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="233"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="221" Margin="298,37,0,0" Stroke="Black" VerticalAlignment="Top" Width="233"/>
+    </Grid>
+    <StackPanel Orientation="Vertical">
+        <TextBlock HorizontalAlignment="Center" TextWrapping="NoWrap" 
+                   Text=" Hello World" VerticalAlignment="Top" FontSize="40"/>
+    </StackPanel>
+   

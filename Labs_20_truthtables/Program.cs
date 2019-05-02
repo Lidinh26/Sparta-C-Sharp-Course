@@ -24,7 +24,7 @@ namespace Labs_20_truthtables
             Console.WriteLine(1|0);
             Console.WriteLine(0|1);
 
-            Console.WriteLine(true&&true); 0
+            Console.WriteLine(true&&true); 
             Console.WriteLine(false&true);
 
             //XOR
