@@ -1,6 +1,9 @@
 using NUnit.Framework;
 using Labs_42_TestME;
 using Labs101_homework;
+using Mini_code_Challenge3;
+using Mini_code_challenege;
+using Mini_code_challenege2;
 
 
 namespace Tests
@@ -18,8 +21,6 @@ namespace Tests
             Assert.Pass();
         }
 
-
-
         [Test]
         public void Lab_42_TestME_Test01()
         {
@@ -32,7 +33,6 @@ namespace Tests
 
             // assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestCase(10,20,5,14.0)]
@@ -63,8 +63,22 @@ namespace Tests
          
         }
 
-        //arrange
-        //act
+        [TestCase(-1,-1,-1,-1)]
+
+        public void Mini_code_challenge(int initialAge, int initialHeight, int finalAge, int finalHeight )
+        {
+            //arrange
+            var expected = -1;
+            var instance = new Dog();
+
+            //assert
+            var actual = instance.Grow(out int finalheight);
+
+            //act
+            Assert.AreEqual(expected, actual);
+            
+
+        }
 
 
 

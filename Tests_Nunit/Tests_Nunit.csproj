@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -15,6 +15,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Labs101_homework\Labs101_homework.csproj" />
     <ProjectReference Include="..\Labs_42_TestME\Labs_42_TestME.csproj" />
+    <ProjectReference Include="..\Mini_code_challenege2\Mini_code_challenege2.csproj" />
+    <ProjectReference Include="..\Mini_code_challenege\Mini_code_challenege.csproj" />
+    <ProjectReference Include="..\Mini_code_Challenge3\Mini_code_Challenge3.csproj" />
   </ItemGroup>
 
 </Project>
