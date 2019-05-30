@@ -99,7 +99,7 @@
             <TextBlock x:Name="Statustext" Grid.Row="2" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="" FontSize="25" />
             <Image x:Name="DiceImage" Grid.Row="1"/>
             <TextBlock x:Name="dateTime" HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="20" />
-            <TextBlock x:Name="testing" Grid.Row="0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="" FontSize="25"/>
+            <TextBlock x:Name="Status" Grid.Row="0" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Text="" FontSize="25"/>
 
         </Grid>
 

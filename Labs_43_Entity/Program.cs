@@ -16,7 +16,7 @@ namespace Labs_43_Entity
         static void Main(string[] args)
         {
             // by using the 'using' statement it will automatically clean up database connection when done
-            using (var db = new NorthwindEntities())
+            /*using (var db = new NorthwindEntities())
 
             {
 
@@ -63,7 +63,7 @@ namespace Labs_43_Entity
             {
 
             }
-
+            */
 
         }
     }

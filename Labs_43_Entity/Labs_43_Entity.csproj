@@ -52,52 +52,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs">
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cow.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cow.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cow.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cow.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
-      <DependentUpon>NorthWindModel.tt</DependentUpon>
+      <DependentUpon>cow.tt</DependentUpon>
     </Compile>
-    <Compile Include="NorthWindModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NorthWindModel.Context.tt</DependentUpon>
+    <Compile Include="CustomerDemographic.cs">
+      <DependentUpon>cow.tt</DependentUpon>
     </Compile>
-    <Compile Include="NorthWindModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NorthWindModel.tt</DependentUpon>
+    <Compile Include="Employee.cs">
+      <DependentUpon>cow.tt</DependentUpon>
     </Compile>
-    <Compile Include="NorthWindModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NorthWindModel.edmx</DependentUpon>
+    <Compile Include="Order.cs">
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Detail.cs">
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>cow.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region.cs">
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shipper.cs">
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Territory.cs">
+      <DependentUpon>cow.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="NorthWindModel.edmx">
+    <EntityDeploy Include="cow.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NorthWindModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>cow.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="NorthWindModel.edmx.diagram">
-      <DependentUpon>NorthWindModel.edmx</DependentUpon>
+    <None Include="cow.edmx.diagram">
+      <DependentUpon>cow.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NorthWindModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthWindModel.edmx</DependentUpon>
-      <LastGenOutput>NorthWindModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="NorthWindModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NorthWindModel.edmx</DependentUpon>
-      <LastGenOutput>NorthWindModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="cow.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cow.edmx</DependentUpon>
+      <LastGenOutput>cow.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="cow.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cow.edmx</DependentUpon>
+      <LastGenOutput>cow.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

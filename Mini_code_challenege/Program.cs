@@ -10,20 +10,13 @@ namespace Mini_code_challenege
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(-1 + 4 * 6);
+            Console.WriteLine();
         }
-    }
 
-    public class Dog
-    {
-        public int Age { get; set; }
-        public int Height { get; set; }
-        public Dog() { }
-
-        public int Grow(out int height)
+        static void Divide(int num1, int num2)
         {
-            height = -1;
-            return -1;
+            Console.WriteLine($"{ num1} / { num2}");
         }
     }
-
 }

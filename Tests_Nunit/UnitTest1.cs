@@ -4,6 +4,7 @@ using Labs101_homework;
 using Mini_code_Challenge3;
 using Mini_code_challenege;
 using Mini_code_challenege2;
+using Lab_HW_106_Interview_Prep;
 
 
 namespace Tests
@@ -80,7 +81,21 @@ namespace Tests
 
         }
 
+        [TestCase("hello",3,108)]
+        [TestCase("world",5,-1)]     
+        [TestCase("world",2,114)]
+        
+        public void ASCII_Return_Index_Of_String(string input, int index, int expected)
+        {
+            //arange
+            var instance = new ASCII();
+            var actual = instance.ASCII_Return_Index_Of_String(input, index);
+                
+            //assert
+            Assert.AreEqual(expected, actual);
 
+            //Act
+        }
 
     }
 }

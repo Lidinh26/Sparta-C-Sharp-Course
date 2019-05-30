@@ -1,0 +1,181 @@
+﻿@page
+@model LiTestModel
+@{
+    //code
+    //two ways of storing trivial strings : viewdata and viewbag
+    ViewData["Value"] = "Here is some data";
+    ViewBag.Value2 = "And some more data here - Viewbag";
+}
+
+<i>
+    <b>
+        <u>
+            We don't really use Bold Italic Underline anymore
+        </u>
+    </b>
+</i>
+
+<p style="font-weight:bold">@ViewData["Value"]</p>
+<p style="font-style:italic">@ViewBag.Value2</p>
+<p>We can also use 'em' for emphasis bold <span>@ViewBag.Value</span></p>
+<p>'p' always starts a new Line BLOCK ELEMENT <p>@ViewBag.Value</p></p>
+<p>So does H1 <h1>@ViewBag.Value</h1></p>
+<p>We can also use 'em' for emphasis bold <div>@ViewBag.Value</div></p>
+<p>Finally to underline we use <span style="text-decoration:underline">@ViewBag.Value</span></p>
+<h1>This is my amazing test web page!</h1>
+
+<p>Some text</p>
+
+<h1>Using Razor</h1>
+
+<h2>The 'at' symbol can be used to write C# code raw on top of HTML</h2>
+
+<h3>@DateTime.Now</h3>
+
+<h4>
+    @{
+        var d = DateTime.Now;
+        d = d.AddDays(2);
+    }
+    The date in 2 days time is @d.ToShortDateString()
+</h4>
+
+<ul>
+    <li>First</li>
+    <li>Second</li>
+    <li>Third</li>
+</ul>
+
+<ol>
+    <li>First</li>
+    <li>Second</li>
+    <li>Third</li>
+</ol>
+
+<ul>
+    @for (int i = 0; i <= 10; i++)
+    {
+        //Notice that incide c# block we can intellegently use HTML as well
+        <li>Your number has number @i</li>
+    }
+</ul>
+
+<h2>This is also Bootstrap</h2>
+<style>
+</style>
+<button class="btn btn-success">Click here!</button>
+<button class="btn btn-danger">Click here!</button>
+<button class="btn btn-default">Click here!</button>
+<button class="btn btn-info">Click here!</button>
+<button class="btn btn-primary">Click here!</button>
+
+<h2>HTML table looks a bit 'rubbish'!</h2>
+
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: black;
+        }
+
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: black;
+        }
+
+        .tg .tg-13pz {
+            font-size: 18px;
+            text-align: center;
+            vertical-align: top
+        }
+</style>
+<table class="tg">
+    <tr>
+        <th class="tg-13pz">Some</th>
+        <th class="tg-13pz">Text</th>
+        <th class="tg-13pz">Here</th>
+        <th class="tg-13pz">In</th>
+        <th class="tg-13pz">This</th>
+        <th class="tg-13pz">Table</th>
+    </tr>
+    <tr>
+        <td class="tg-13pz">also</td>
+        <td class="tg-13pz">here</td>
+        <td class="tg-13pz">.</td>
+        <td class="tg-13pz">.</td>
+        <td class="tg-13pz">.</td>
+        <td class="tg-13pz">.</td>
+    </tr>
+    <tr>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+    </tr>
+    <tr>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+    </tr>
+    <tr>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+        <td class="tg-13pz"></td>
+    </tr>
+    <tr>
+        <td class="tg-13pz">On</td>
+        <td class="tg-13pz">The</td>
+        <td class="tg-13pz">Bottom</td>
+        <td class="tg-13pz">Row</td>
+        <td class="tg-13pz">.</td>
+        <td class="tg-13pz">!!</td>
+    </tr>
+</table>
+
+<h2>Bootstrap Table</h2>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Header</th>
+        <th>Goes</th>
+        <th>Here</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>also</td>
+        <td>here</td>
+        <td>.</td>
+        <td>.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>In </td>
+        <td>some </td>
+        <td>detail</td>
+    </tr>
+</table>

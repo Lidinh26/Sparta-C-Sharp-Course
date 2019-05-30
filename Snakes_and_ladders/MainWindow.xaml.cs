@@ -22,23 +22,22 @@ namespace Snakes_and_ladders
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool Players;
+        public bool Players; // variable for adding another player
         int counter;
         int counter2;
-
-        BitmapImage imagePlayer1;
-        BitmapImage imagePlayer2;
-        BitmapImage imagePlayer12;
-
-
+        BitmapImage blackCounter;
+        BitmapImage redCounter;
+        BitmapImage bothCounters;
+        BitmapImage StartingDice;
         public MainWindow()
         {
             InitializeComponent();
             Initialize();
+            DiceImage.Source = StartingDice;
         }
         private void startclock()
         {
-            DispatcherTimer timer = new DispatcherTimer();
+            DispatcherTimer timer = new DispatcherTimer(); //Timer display
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += tickevent;
             timer.Start();
@@ -53,15 +52,15 @@ namespace Snakes_and_ladders
             if (MessageBox.Show("Are you sure you want to quit?", "Please don't quit!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
 
             {
-                Application.Current.Shutdown();
+                Application.Current.Shutdown(); // Exit the application
             }
 
         }
         private void RollButton_Click(object sender, RoutedEventArgs e)
         {
-            Random r = new Random();
-            int dice = r.Next(1, 7);
-            switch (dice)
+            Random r = new Random(); //Random roll generator 
+            int dice = r.Next(1, 7); //Between 1-6
+            switch (dice) //Switch statement to assign the image of the dice rolled specifically to the value of the dice rolled
             {
                 case 1:
                     DiceImage.Source = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\Alea_1.png"));
@@ -88,7 +87,7 @@ namespace Snakes_and_ladders
 
             if (Players == false)
             {
-                testing.Text = "Player 1, it's your turn!";
+                Status.Text = "Player 1, it's your turn!";
                 int oldCounter2 = counter2;
                 counter2 += dice;
 
@@ -169,16 +168,17 @@ namespace Snakes_and_ladders
 
             else if (Players == true)
             {
-                testing.Text = "Player 2, its your turn!";
+                Status.Text = "Player 2, its your turn!";
                 int oldCounter = counter;
-                counter += dice;
+                counter += dice; 
 
                 if (counter > 36)
                 {
                     counter = 36 + (36 - counter);
                 }
 
-                //ladders
+                //Statements to make sure the counter moves accordingly to the snakes and ladders
+                //ladder
                 if (counter == 2)
                 {
                     counter = 15;
@@ -221,16 +221,8 @@ namespace Snakes_and_ladders
                     counter = 12;
                 }
 
-                //Statustext.Text = $"You have rolled {dice}";
                 Statustext.Text = $"Player 1, you are in position {counter}";
-                //Statustext.Text = $"Player 1 is in position {counter2}";
-
-                // TODO counter = 36
-
-                // TODO counter > 36
-
-                // TODO player ends up at ladder or snake
-
+                
                 RemoveCounter(oldCounter);
                 RemoveCounter2(counter2);
 
@@ -254,13 +246,13 @@ namespace Snakes_and_ladders
             }
             #endregion
 
-            if (Players == true)
+            if (Players == true) //To make sure the the players rotate in turn order
             {
                 Players = false;
             }
             else Players = true;
         }
-        private void RemoveCounter2(int oldCounter2)
+        private void RemoveCounter2(int oldCounter2) //Method to remove the player 2 counter from previous position
         {
             if (oldCounter2 == 1)
             {
@@ -406,9 +398,8 @@ namespace Snakes_and_ladders
             {
                 p36.Source = null;
             }
-
         }
-        private void RemoveCounter(int oldCounter)
+        private void RemoveCounter(int oldCounter) //Method to remove the player 1 counter from previous position
         {
             if (oldCounter == 1)
             {
@@ -557,153 +548,153 @@ namespace Snakes_and_ladders
 
 
         }
-        private void AddCounter(int c)
+        private void AddCounter(int c) //Method to move the counter position //Else statement to make sure right image is used when both counters are in the same position
         {
             if (Players == true)
             {
                 if (c == 1)
                 {
-                    if (p1.Source == null) { p1.Source = imagePlayer1; } else p1.Source = imagePlayer12;
+                    if (p1.Source == null) { p1.Source = blackCounter; } else p1.Source = bothCounters;
                 }
                 if (c == 2)
                 {
-                    if (p2.Source == null) { p2.Source = imagePlayer1; } else p2.Source = imagePlayer12;
+                    if (p2.Source == null) { p2.Source = blackCounter; } else p2.Source = bothCounters;
                 }
                 if (c == 3)
                 {
-                    if (p3.Source == null) { p3.Source = imagePlayer1; } else p3.Source = imagePlayer12;
+                    if (p3.Source == null) { p3.Source = blackCounter; } else p3.Source = bothCounters;
                 }
                 if (c == 4)
                 {
-                    if (p4.Source == null) { p4.Source = imagePlayer1; } else p4.Source = imagePlayer12;
+                    if (p4.Source == null) { p4.Source = blackCounter; } else p4.Source = bothCounters;
                 }
                 if (c == 5)
                 {
-                    if (p5.Source == null) { p5.Source = imagePlayer1; } else p5.Source = imagePlayer12;
+                    if (p5.Source == null) { p5.Source = blackCounter; } else p5.Source = bothCounters;
                 }
                 if (c == 6)
                 {
-                    if (p6.Source == null) { p6.Source = imagePlayer1; } else p6.Source = imagePlayer12;
+                    if (p6.Source == null) { p6.Source = blackCounter; } else p6.Source = bothCounters;
                 }
                 if (c == 7)
                 {
-                    if (p7.Source == null) { p7.Source = imagePlayer1; } else p7.Source = imagePlayer12;
+                    if (p7.Source == null) { p7.Source = blackCounter; } else p7.Source = bothCounters;
                 }
                 if (c == 8)
                 {
-                    if (p8.Source == null) { p8.Source = imagePlayer1; } else p8.Source = imagePlayer12;
+                    if (p8.Source == null) { p8.Source = blackCounter; } else p8.Source = bothCounters;
                 }
                 if (c == 9)
                 {
-                    if (p9.Source == null) { p9.Source = imagePlayer1; } else p9.Source = imagePlayer12;
+                    if (p9.Source == null) { p9.Source = blackCounter; } else p9.Source = bothCounters;
                 }
                 if (c == 10)
                 {
-                    if (p10.Source == null) { p10.Source = imagePlayer1; } else p10.Source = imagePlayer12;
+                    if (p10.Source == null) { p10.Source = blackCounter; } else p10.Source = bothCounters;
                 }
                 if (c == 11)
                 {
-                    if (p11.Source == null) { p11.Source = imagePlayer1; } else p11.Source = imagePlayer12;
+                    if (p11.Source == null) { p11.Source = blackCounter; } else p11.Source = bothCounters;
                 }
                 if (c == 12)
                 {
-                    if (p12.Source == null) { p12.Source = imagePlayer1; } else p12.Source = imagePlayer12;
+                    if (p12.Source == null) { p12.Source = blackCounter; } else p12.Source = bothCounters;
                 }
                 if (c == 13)
                 {
-                    if (p13.Source == null) { p13.Source = imagePlayer1; } else p13.Source = imagePlayer12;
+                    if (p13.Source == null) { p13.Source = blackCounter; } else p13.Source = bothCounters;
                 }
                 if (c == 14)
                 {
-                    if (p14.Source == null) { p14.Source = imagePlayer1; } else p14.Source = imagePlayer12;
+                    if (p14.Source == null) { p14.Source = blackCounter; } else p14.Source = bothCounters;
                 }
                 if (c == 15)
                 {
-                    if (p15.Source == null) { p15.Source = imagePlayer1; } else p15.Source = imagePlayer12;
+                    if (p15.Source == null) { p15.Source = blackCounter; } else p15.Source = bothCounters;
                 }
                 if (c == 16)
                 {
-                    if (p16.Source == null) { p16.Source = imagePlayer1; } else p16.Source = imagePlayer12;
+                    if (p16.Source == null) { p16.Source = blackCounter; } else p16.Source = bothCounters;
                 }
                 if (c == 17)
                 {
-                    if (p17.Source == null) { p17.Source = imagePlayer1; } else p17.Source = imagePlayer12;
+                    if (p17.Source == null) { p17.Source = blackCounter; } else p17.Source = bothCounters;
                 }
                 if (c == 18)
                 {
-                    if (p18.Source == null) { p18.Source = imagePlayer1; } else p18.Source = imagePlayer12;
+                    if (p18.Source == null) { p18.Source = blackCounter; } else p18.Source = bothCounters;
                 }
                 if (c == 19)
                 {
-                    if (p19.Source == null) { p19.Source = imagePlayer1; } else p19.Source = imagePlayer12;
+                    if (p19.Source == null) { p19.Source = blackCounter; } else p19.Source = bothCounters;
                 }
                 if (c == 20)
                 {
-                    if (p20.Source == null) { p20.Source = imagePlayer1; } else p20.Source = imagePlayer12;
+                    if (p20.Source == null) { p20.Source = blackCounter; } else p20.Source = bothCounters;
                 }
                 if (c == 21)
                 {
-                    if (p21.Source == null) { p21.Source = imagePlayer1; } else p21.Source = imagePlayer12;
+                    if (p21.Source == null) { p21.Source = blackCounter; } else p21.Source = bothCounters;
                 }
                 if (c == 22)
                 {
-                    if (p22.Source == null) { p22.Source = imagePlayer1; } else p22.Source = imagePlayer12;
+                    if (p22.Source == null) { p22.Source = blackCounter; } else p22.Source = bothCounters;
                 }
                 if (c == 23)
                 {
-                    if (p23.Source == null) { p23.Source = imagePlayer1; } else p23.Source = imagePlayer12;
+                    if (p23.Source == null) { p23.Source = blackCounter; } else p23.Source = bothCounters;
                 }
                 if (c == 24)
                 {
-                    if (p24.Source == null) { p24.Source = imagePlayer1; } else p24.Source = imagePlayer12;
+                    if (p24.Source == null) { p24.Source = blackCounter; } else p24.Source = bothCounters;
                 }
                 if (c == 25)
                 {
-                    if (p25.Source == null) { p25.Source = imagePlayer1; } else p25.Source = imagePlayer12;
+                    if (p25.Source == null) { p25.Source = blackCounter; } else p25.Source = bothCounters;
                 }
                 if (c == 26)
                 {
-                    if (p26.Source == null) { p26.Source = imagePlayer1; } else p26.Source = imagePlayer12;
+                    if (p26.Source == null) { p26.Source = blackCounter; } else p26.Source = bothCounters;
                 }
                 if (c == 27)
                 {
-                    if (p27.Source == null) { p27.Source = imagePlayer1; } else p27.Source = imagePlayer12;
+                    if (p27.Source == null) { p27.Source = blackCounter; } else p27.Source = bothCounters;
                 }
                 if (c == 28)
                 {
-                    if (p28.Source == null) { p28.Source = imagePlayer1; } else p28.Source = imagePlayer12;
+                    if (p28.Source == null) { p28.Source = blackCounter; } else p28.Source = bothCounters;
                 }
                 if (c == 29)
                 {
-                    if (p29.Source == null) { p29.Source = imagePlayer1; } else p29.Source = imagePlayer12;
+                    if (p29.Source == null) { p29.Source = blackCounter; } else p29.Source = bothCounters;
                 }
                 if (c == 30)
                 {
-                    if (p30.Source == null) { p30.Source = imagePlayer1; } else p30.Source = imagePlayer12;
+                    if (p30.Source == null) { p30.Source = blackCounter; } else p30.Source = bothCounters;
                 }
                 if (c == 31)
                 {
-                    if (p31.Source == null) { p31.Source = imagePlayer1; } else p31.Source = imagePlayer12;
+                    if (p31.Source == null) { p31.Source = blackCounter; } else p31.Source = bothCounters;
                 }
                 if (c == 32)
                 {
-                    if (p32.Source == null) { p32.Source = imagePlayer1; } else p32.Source = imagePlayer12;
+                    if (p32.Source == null) { p32.Source = blackCounter; } else p32.Source = bothCounters;
                 }
                 if (c == 33)
                 {
-                    if (p33.Source == null) { p33.Source = imagePlayer1; } else p33.Source = imagePlayer12;
+                    if (p33.Source == null) { p33.Source = blackCounter; } else p33.Source = bothCounters;
                 }
                 if (c == 34)
                 {
-                    if (p34.Source == null) { p34.Source = imagePlayer1; } else p34.Source = imagePlayer12;
+                    if (p34.Source == null) { p34.Source = blackCounter; } else p34.Source = bothCounters;
                 }
                 if (c == 35)
                 {
-                    if (p35.Source == null) { p35.Source = imagePlayer1; } else p35.Source = imagePlayer12;
+                    if (p35.Source == null) { p35.Source = blackCounter; } else p35.Source = bothCounters;
                 }
                 if (c == 36)
                 {
-                    if (p36.Source == null) { p36.Source = imagePlayer1; } else p36.Source = imagePlayer12;
+                    if (p36.Source == null) { p36.Source = blackCounter; } else p36.Source = bothCounters;
                 }
 
             }
@@ -712,187 +703,178 @@ namespace Snakes_and_ladders
             {
                 if (c == 1)
                 {
-                    if (p1.Source == null) { p1.Source = imagePlayer2; } else p1.Source = imagePlayer12;
+                    if (p1.Source == null) { p1.Source = redCounter; } else p1.Source = bothCounters;
                 }
                 if (c == 2)
                 {
-                    if (p2.Source == null) { p2.Source = imagePlayer2; } else p2.Source = imagePlayer12;
+                    if (p2.Source == null) { p2.Source = redCounter; } else p2.Source = bothCounters;
                 }
                 if (c == 3)
                 {
-                    if (p3.Source == null) { p3.Source = imagePlayer2; } else p3.Source = imagePlayer12;
+                    if (p3.Source == null) { p3.Source = redCounter; } else p3.Source = bothCounters;
                 }
                 if (c == 4)
                 {
-                    if (p4.Source == null) { p4.Source = imagePlayer2; } else p4.Source = imagePlayer12;
+                    if (p4.Source == null) { p4.Source = redCounter; } else p4.Source = bothCounters;
                 }
                 if (c == 5)
                 {
-                    if (p5.Source == null) { p5.Source = imagePlayer2; } else p5.Source = imagePlayer12;
+                    if (p5.Source == null) { p5.Source = redCounter; } else p5.Source = bothCounters;
                 }
                 if (c == 6)
                 {
-                    if (p6.Source == null) { p6.Source = imagePlayer2; } else p6.Source = imagePlayer12;
+                    if (p6.Source == null) { p6.Source = redCounter; } else p6.Source = bothCounters;
                 }
                 if (c == 7)
                 {
-                    if (p7.Source == null) { p7.Source = imagePlayer2; } else p7.Source = imagePlayer12;
+                    if (p7.Source == null) { p7.Source = redCounter; } else p7.Source = bothCounters;
                 }
                 if (c == 8)
                 {
-                    if (p8.Source == null) { p8.Source = imagePlayer2; } else p8.Source = imagePlayer12;
+                    if (p8.Source == null) { p8.Source = redCounter; } else p8.Source = bothCounters;
                 }
                 if (c == 9)
                 {
-                    if (p9.Source == null) { p9.Source = imagePlayer2; } else p9.Source = imagePlayer12;
+                    if (p9.Source == null) { p9.Source = redCounter; } else p9.Source = bothCounters;
                 }
                 if (c == 10)
                 {
-                    if (p10.Source == null) { p10.Source = imagePlayer2; } else p10.Source = imagePlayer12;
+                    if (p10.Source == null) { p10.Source = redCounter; } else p10.Source = bothCounters;
                 }
                 if (c == 11)
                 {
-                    if (p11.Source == null) { p11.Source = imagePlayer2; } else p11.Source = imagePlayer12;
+                    if (p11.Source == null) { p11.Source = redCounter; } else p11.Source = bothCounters;
                 }
                 if (c == 12)
                 {
-                    if (p12.Source == null) { p12.Source = imagePlayer2; } else p12.Source = imagePlayer12;
+                    if (p12.Source == null) { p12.Source = redCounter; } else p12.Source = bothCounters;
                 }
                 if (c == 13)
                 {
-                    if (p13.Source == null) { p13.Source = imagePlayer2; } else p13.Source = imagePlayer12;
+                    if (p13.Source == null) { p13.Source = redCounter; } else p13.Source = bothCounters;
                 }
                 if (c == 14)
                 {
-                    if (p14.Source == null) { p14.Source = imagePlayer2; } else p14.Source = imagePlayer12;
+                    if (p14.Source == null) { p14.Source = redCounter; } else p14.Source = bothCounters;
                 }
                 if (c == 15)
                 {
-                    if (p15.Source == null) { p15.Source = imagePlayer2; } else p15.Source = imagePlayer12;
+                    if (p15.Source == null) { p15.Source = redCounter; } else p15.Source = bothCounters;
                 }
                 if (c == 16)
                 {
-                    if (p16.Source == null) { p16.Source = imagePlayer2; } else p16.Source = imagePlayer12;
+                    if (p16.Source == null) { p16.Source = redCounter; } else p16.Source = bothCounters;
                 }
                 if (c == 17)
                 {
-                    if (p17.Source == null) { p17.Source = imagePlayer2; } else p17.Source = imagePlayer12;
+                    if (p17.Source == null) { p17.Source = redCounter; } else p17.Source = bothCounters;
                 }
                 if (c == 18)
                 {
-                    if (p18.Source == null) { p18.Source = imagePlayer2; } else p18.Source = imagePlayer12;
+                    if (p18.Source == null) { p18.Source = redCounter; } else p18.Source = bothCounters;
                 }
                 if (c == 19)
                 {
-                    if (p19.Source == null) { p19.Source = imagePlayer2; } else p19.Source = imagePlayer12;
+                    if (p19.Source == null) { p19.Source = redCounter; } else p19.Source = bothCounters;
                 }
                 if (c == 20)
                 {
-                    if (p20.Source == null) { p20.Source = imagePlayer2; } else p20.Source = imagePlayer12;
+                    if (p20.Source == null) { p20.Source = redCounter; } else p20.Source = bothCounters;
                 }
                 if (c == 21)
                 {
-                    if (p21.Source == null) { p21.Source = imagePlayer2; } else p21.Source = imagePlayer12;
+                    if (p21.Source == null) { p21.Source = redCounter; } else p21.Source = bothCounters;
                 }
                 if (c == 22)
                 {
-                    if (p22.Source == null) { p22.Source = imagePlayer2; } else p22.Source = imagePlayer12;
+                    if (p22.Source == null) { p22.Source = redCounter; } else p22.Source = bothCounters;
                 }
                 if (c == 23)
                 {
-                    if (p23.Source == null) { p23.Source = imagePlayer2; } else p23.Source = imagePlayer12;
+                    if (p23.Source == null) { p23.Source = redCounter; } else p23.Source = bothCounters;
                 }
                 if (c == 24)
                 {
-                    if (p24.Source == null) { p24.Source = imagePlayer2; } else p24.Source = imagePlayer12;
+                    if (p24.Source == null) { p24.Source = redCounter; } else p24.Source = bothCounters;
                 }
                 if (c == 25)
                 {
-                    if (p25.Source == null) { p25.Source = imagePlayer2; } else p25.Source = imagePlayer12;
+                    if (p25.Source == null) { p25.Source = redCounter; } else p25.Source = bothCounters;
                 }
                 if (c == 26)
                 {
-                    if (p26.Source == null) { p26.Source = imagePlayer2; } else p26.Source = imagePlayer12;
+                    if (p26.Source == null) { p26.Source = redCounter; } else p26.Source = bothCounters;
                 }
                 if (c == 27)
                 {
-                    if (p27.Source == null) { p27.Source = imagePlayer2; } else p27.Source = imagePlayer12;
+                    if (p27.Source == null) { p27.Source = redCounter; } else p27.Source = bothCounters;
                 }
                 if (c == 28)
                 {
-                    if (p28.Source == null) { p28.Source = imagePlayer2; } else p28.Source = imagePlayer12;
+                    if (p28.Source == null) { p28.Source = redCounter; } else p28.Source = bothCounters;
                 }
                 if (c == 29)
                 {
-                    if (p29.Source == null) { p29.Source = imagePlayer2; } else p29.Source = imagePlayer12;
+                    if (p29.Source == null) { p29.Source = redCounter; } else p29.Source = bothCounters;
                 }
                 if (c == 30)
                 {
-                    if (p30.Source == null) { p30.Source = imagePlayer2; } else p30.Source = imagePlayer12;
+                    if (p30.Source == null) { p30.Source = redCounter; } else p30.Source = bothCounters;
                 }
                 if (c == 31)
                 {
-                    if (p31.Source == null) { p31.Source = imagePlayer2; } else p31.Source = imagePlayer12;
+                    if (p31.Source == null) { p31.Source = redCounter; } else p31.Source = bothCounters;
                 }
                 if (c == 32)
                 {
-                    if (p32.Source == null) { p32.Source = imagePlayer2; } else p32.Source = imagePlayer12;
+                    if (p32.Source == null) { p32.Source = redCounter; } else p32.Source = bothCounters;
                 }
                 if (c == 33)
                 {
-                    if (p33.Source == null) { p33.Source = imagePlayer2; } else p33.Source = imagePlayer12;
+                    if (p33.Source == null) { p33.Source = redCounter; } else p33.Source = bothCounters;
                 }
                 if (c == 34)
                 {
-                    if (p34.Source == null) { p34.Source = imagePlayer2; } else p34.Source = imagePlayer12;
+                    if (p34.Source == null) { p34.Source = redCounter; } else p34.Source = bothCounters;
                 }
                 if (c == 35)
                 {
-                    if (p35.Source == null) { p35.Source = imagePlayer2; } else p35.Source = imagePlayer12;
+                    if (p35.Source == null) { p35.Source = redCounter; } else p35.Source = bothCounters;
                 }
                 if (c == 36)
                 {
-                    if (p36.Source == null) { p36.Source = imagePlayer2; } else p36.Source = imagePlayer12;
+                    if (p36.Source == null) { p36.Source = redCounter; } else p36.Source = bothCounters;
                 }
 
             }
         }
         private void Initialize()
         {
-            //if (Players == true)
-            //{
-            //    testing.Text = "You start Player 1\nRoll the dice!";
-            //}
-            //else if (Players == false)
-            //{
-            //    testing.Text = "You start Player 2\nRoll the dice!";
-            //}
+            DiceImage.Source = StartingDice;
             Players = true;
-            testing.Text = "You start Player 1\nRoll the dice!";
+            Status.Text = "You start Player 1\nRoll the dice!";
             Title.Content = "SNAKES AND LADDERS";
             Title.FontSize = 50;
-            DiceImage.Source = null;
             startclock();
             counter = 1;
             counter2 = 1; 
-            //p1.Source = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\PinClipart.com_strawberry-clipart_2471339.png"));
-            imagePlayer1 = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\Black.png"));
-            imagePlayer2 = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\red.png"));
-            imagePlayer12 = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\Blackred.png"));
-            p1.Source = imagePlayer12;
+            //Assigning the images to the counter variable
+            blackCounter = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\Black.png"));
+            redCounter = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\red.png"));
+            bothCounters = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\Blackred.png"));
+            StartingDice = new BitmapImage(new Uri("C:\\Sparta-C-Sharp-Course\\Snakes_and_ladders\\Images\\dice_noun_002_10624.jpg"));
+            p1.Source = bothCounters;
 
         }
         private void restart_button(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i <= 36; i++)
+            for (int i = 0; i <= 36; i++)  // For loop to remove the counters from the board. 
             {
                 RemoveCounter(i);
+                RemoveCounter2(i);
             }
-            //InitializeComponent();
             Initialize();
-           // Players = true;
             Statustext.Text = null;
         }
     }
-
 }

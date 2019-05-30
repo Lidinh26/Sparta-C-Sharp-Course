@@ -85,8 +85,6 @@ namespace Labs_44_entity
                     ContactName = "Bob",
                     CompanyName = "SpartaGlobal",
                     City = "London"
-
-
                 };
 
                 db.Customers.Add(newCustomer);
@@ -113,7 +111,6 @@ namespace Labs_44_entity
 
                 db.Customers.Remove(Customer);
                 db.SaveChanges();
-
             }
 //Query to view data
             //query

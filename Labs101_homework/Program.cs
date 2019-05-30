@@ -28,6 +28,8 @@ namespace Labs101_homework
             var stack = new Stack<int>();
             var queue = new Queue<int>();
 
+            
+
             for (int i =0; i <list.Count; i++)
             {
                 //iterate over this list : multiply each item by 2: add to a stack

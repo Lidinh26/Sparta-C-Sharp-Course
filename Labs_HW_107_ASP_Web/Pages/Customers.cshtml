@@ -1,0 +1,23 @@
+﻿@page
+@model Labs_80_ASP_Core_Web.Pages.CustomersModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Company Name</th>
+        <th>Contact Name</th>
+        <th>Phone</th>
+        <th>Fax</th>
+    </tr>
+    @foreach (var item in Model.CustomerList)
+    {
+        <tr>
+            <td>@item.CompanyName</td>
+            <td>@item.ContactName</td>
+            <td>@item.Phone</td>
+            <td>@item.Fax</td>
+        </tr>
+    }
+</table>

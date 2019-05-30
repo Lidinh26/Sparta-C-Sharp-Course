@@ -1,99 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Labs_Homework_Collections
+public class DemoEncap
 {
-    class Program
+    // private variables declared 
+    // these can only be accessed by 
+    // public methods of class 
+    private String studentName;
+    private int studentAge;
+
+    // using accessors to get and  
+    // set the value of studentName 
+    public String Name
     {
-        static void Main(string[] args)
+        get
         {
-
-            //For loop using array
-            int[] myArray2 = new int[] { 10, 20, 30 };
-            
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine(myArray2[i]);
-            }
-            Console.ReadLine();
-
-
-            //Foreach loop using array
-            int[] numbers1 = new int[] {10,40,50 };
-
-            foreach (int Numbers in numbers1)
-            {
-                Console.WriteLine(Numbers);
-            }
-            Console.ReadLine();
-
-            //While loop using array 
-
-            int number = 0;
-
-            while( number < 10)
-            {
-                Console.WriteLine(number);
-                number++;
-                Console.ReadLine();
-            }
-
-            int calculations = 0;
-            do
-            {
-                Console.WriteLine(calculations);
-                calculations++;
-            }
-
-            while (calculations < 10);
-
-            Console.ReadLine();
-            
-
-
-
-
-
-            /* for (int i = 0; i < length; i++)
-             {
-
-             }
-
-
-             //Exercise 2
-             int[] myArray = new int[1000];
-
-             for (int i = 0; i < myArray.Length; i++)
-             {
-                 Console.WriteLine(i);
-             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-             List<int> number = new List<int>(1000);
-
-             for (int i = 0; i < number.Count; i++)
-                 {
-
-                 }
-
-             Console.WriteLine(number); */
+            return studentName;
         }
+        set
+        {
+            studentName = value;
+        }
+    }
+
+    // using accessors to get and  
+    // set the value of studentAge 
+    public int Age
+    {
+        get
+        {
+            return studentAge;
+        }
+        set
+        {
+            studentAge = value;
+        }
+    }
+}
+
+// Driver Class 
+class GFG
+{
+    // Main Method 
+    static public void Main()
+    {
+        // creating object 
+        DemoEncap obj = new DemoEncap();
+        // calls set accessor of the property Name,  
+        // and pass "Ankita" as value of the  
+        // standard field 'value' 
+        obj.Name = "Ankita";
+        // calls set accessor of the property Age,  
+        // and pass "21" as value of the  
+        // standard field 'value' 
+        obj.Age = 21;
+        // Displaying values of the variables 
+        Console.WriteLine("Name: " + obj.Name);
+        Console.WriteLine("Age: " + obj.Age);
+
+
     }
 }
