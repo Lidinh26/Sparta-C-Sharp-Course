@@ -10,13 +10,11 @@ namespace Mini_code_challenege
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(-1 + 4 * 6);
-            Console.WriteLine();
-        }
-
-        static void Divide(int num1, int num2)
-        {
-            Console.WriteLine($"{ num1} / { num2}");
+            string word = "Hello";
+            for (int i = word.Length-1; i>= 0; i--)
+            {
+                Console.WriteLine(word[i]);
+            }
         }
     }
 }

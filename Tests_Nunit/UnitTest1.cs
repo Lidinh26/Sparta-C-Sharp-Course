@@ -4,8 +4,7 @@ using Labs101_homework;
 using Mini_code_Challenge3;
 using Mini_code_challenege;
 using Mini_code_challenege2;
-using Lab_HW_106_Interview_Prep;
-
+using Hw_109_linq_aggregate;
 
 namespace Tests
 {
@@ -36,7 +35,7 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(10,20,5,14.0)]
+        [TestCase(10, 20, 5, 14.0)]
         [TestCase(20, 30, 6, 25.0)]
         [TestCase(30, 50, 10, 35)]
 
@@ -57,45 +56,77 @@ namespace Tests
         [TestCase(1, 2, 3, 4, 5, -1)]
         public void Labs101_homework(int a, int b, int c, int d, int e, int expected)
         {
-                var actual = Collections.UseCollections(a, b, c, d, e);
+            var actual = Collections.UseCollections(a, b, c, d, e);
 
-          
-          Assert.AreEqual(expected, actual);
-         
+
+            Assert.AreEqual(expected, actual);
+
         }
 
-        [TestCase(-1,-1,-1,-1)]
+        [TestCase(-1, -1, -1, -1)]
 
-        public void Mini_code_challenge(int initialAge, int initialHeight, int finalAge, int finalHeight )
+        public void Mini_code_challenge(int initialAge, int initialHeight, int finalAge, int finalHeight)
         {
             //arrange
             var expected = -1;
-            var instance = new Dog();
+            //var instance = new Dog();
 
             //assert
-            var actual = instance.Grow(out int finalheight);
+            // var actual = instance.Grow(out int finalheight);
 
             //act
-            Assert.AreEqual(expected, actual);
-            
+            //Assert.AreEqual(expected, actual);
 
         }
 
-        [TestCase("hello",3,108)]
-        [TestCase("world",5,-1)]     
-        [TestCase("world",2,114)]
-        
-        public void ASCII_Return_Index_Of_String(string input, int index, int expected)
+
+        [TestCase(new int[] { 1, 2, 3, 4, 5, 6 }, 21)]
+        [TestCase(new int[] { 20, 30, 10 }, 60)]
+        [TestCase(new int[] { 1, 2, 3, 1, 2, 1 }, 10)]
+
+        public void Hw_109_linq_Aggregate(int[] array, int expected)
         {
-            //arange
-            var instance = new ASCII();
-            var actual = instance.ASCII_Return_Index_Of_String(input, index);
-                
+            //pass in array and get back sum : check is valid
+            //arrange
+            //act
+            var actual = LINQAggregate.LINQAggregateSum(array);
             //assert
             Assert.AreEqual(expected, actual);
-
-            //Act
         }
 
+        [TestCase(new string[] {"Hello", "You", "OK"}, new string[] {"Hello", "You", "OK", "Buddy"}, new string[] { "Hello", "You", "OK", "Buddy" })]
+        [TestCase(new string[] { "Whats", "up", "bro" }, new string[] { "nothing", "much", "you", "know" }, new string[] { "Whats", "up", "bro", "nothing", "much", "you", "know" })]
+        [TestCase(new string[] { "It", "is", "Wednesday" }, new string[] { "It", "is", "Tuesday" }, new string[] { "It", "is", "Wednesday", "Tuesday"})]
+        public void Hw_109_linq_union(string[] string1, string[] string2, string[] expected)
+        {
+            //act
+            var actual = LINQAggregate.LINQUnion(string1, string2);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [TestCase(new string[] { "Hello", "You", "OK" }, new string[] { "Hello", "You", "OK", "Buddy" }, new string[] { "Hello", "You", "OK"})]
+        [TestCase(new string[] { "Li", "Carmen", "Pug" }, new string[] { "Li", "Carmen", "Husky" }, new string[] { "Li", "Carmen"})]
+        [TestCase(new string[] { "Sparta", "Global", "2018", "31" }, new string[] { "Sparta", "Global", "2019", "Buddy", "31" }, new string[] { "Sparta", "Global", "31"})]
+
+        public void Hw_109_linq_intersect(string[] string1, string[] string2, string[] expected)
+        {
+            //act
+            var actual = LINQAggregate.LINQIntersect(string1, string2);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(new int[] {1,2,3,4,5,6}, new int[] {1,2,3,4,5,6,7}, new int[] {1,2,3,4,5,6,7})]
+
+        public void Hw_109_linq_projectb(int[] int1, int[] int2, int[] expected)
+        {
+            //act
+            var actual = ProjectB.ProjectBUnion(int1, int2);
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
