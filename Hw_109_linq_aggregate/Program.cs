@@ -26,8 +26,6 @@ namespace Hw_109_linq_aggregate
         {
             ////Use LINQ Union to join 2 arrays and eliminate duplicates
 
-            //string[] string1 = new string[] {"Hello", "My","Name","Is","Li"};
-            //string[] string2 = new string[] {"Hello", "My", "Name", "Is", "Carmen" };
 
             var result = array1.Union(array2).ToArray();
 

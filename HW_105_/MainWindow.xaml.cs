@@ -83,12 +83,18 @@ namespace HW_105_
         {
             if (NewButton.Content.ToString() == "New")
             {
+                EditButton.IsEnabled = false;
+                DeleteButton.IsEnabled = false;
+                AddUserButton.IsEnabled = false;
                 NewButton.Content = "Add";
                 TextBox.IsReadOnly = false;
                 TextBox.Text = "Start typing . . . .";
             }
             else if (NewButton.Content.ToString() == "Add")
             {
+                EditButton.IsEnabled = true;
+                DeleteButton.IsEnabled = true;
+                AddUserButton.IsEnabled = true;
                 NewButton.Content = "New";
                 using (var db = new ToDoDatabase())
                 {
@@ -99,6 +105,8 @@ namespace HW_105_
                     };
                     db.Tasks.Add(TaskToAdd);
                     db.SaveChanges();
+
+
                     //refresh view
                     TaskList = db.Tasks.Where(t => t.UserID == currentuserID).ToList();
                     UserTasksListBox.ItemsSource = null;
@@ -138,20 +146,32 @@ namespace HW_105_
 
                 if (EditButton.Content.ToString() == "Edit")
                 {
+                    NewButton.IsEnabled = false;
+                    DeleteButton.IsEnabled = false;
+                    AddUserButton.IsEnabled = false;
                     EditButton.Content = "Save";
+                    TextBox.Text = TaskSelected.TaskDescription;
                     TextBox.IsReadOnly = false;
                 }
                 else if (EditButton.Content.ToString() == "Save")
                 {
+                    NewButton.IsEnabled = true;
+                    DeleteButton.IsEnabled = true;
+                    AddUserButton.IsEnabled = true;
                     EditButton.Content = "Edit";
-                    if (userSelected != null)
-                    {
-                        
-                        TaskSelected = db.Tasks.Where(c => c.TaskID == TaskSelected.TaskID).FirstOrDefault();
 
-                        TaskSelected.TaskDescription = TextBox.Text;
-                        db.SaveChanges();
-                    }
+                    TaskSelected = db.Tasks.Where(c => c.TaskID == TaskSelected.TaskID).FirstOrDefault();
+
+                    TaskSelected.TaskDescription = TextBox.Text;
+                    db.SaveChanges();
+
+                    // Refresh tasktable
+                    TaskList = db.Tasks.Where(t => t.UserID == currentuserID).ToList();
+                    UserTasksListBox.ItemsSource = null;
+                    UserTasksListBox.ItemsSource = TaskList;
+                    // Clear TextBox
+                    TextBox.Clear();
+                    TextBox.IsReadOnly = true;
 
                 }
             }
@@ -161,12 +181,18 @@ namespace HW_105_
         {
             if (AddUserButton.Content.ToString() == "Add User")
             {
+                NewButton.IsEnabled = false;
+                DeleteButton.IsEnabled = false;
+                EditButton.IsEnabled = false;
                 AddUserButton.Content = "Add";
                 NewUserTextBox.IsReadOnly = false;
                 NewUserTextBox.Text = "";
             }
             else if (AddUserButton.Content.ToString() == "Add")
             {
+                NewButton.IsEnabled = true;
+                DeleteButton.IsEnabled = true;
+                EditButton.IsEnabled = true;
                 AddUserButton.Content = "Add User";
 
                 using (var db = new ToDoDatabase())
@@ -187,6 +213,6 @@ namespace HW_105_
             }
 
         }
-       
+
     }
 }

@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\106_HW_Interview_Prep\Lab_HW_106_Interview_Prep.csproj" />
     <ProjectReference Include="..\Hw_109_linq_aggregate\Hw_109_linq_aggregate.csproj" />
+    <ProjectReference Include="..\HW_110_Stream_reader_writer\HW_110_Stream_reader_writer.csproj" />
     <ProjectReference Include="..\Labs101_homework\Labs101_homework.csproj" />
     <ProjectReference Include="..\Labs_42_TestME\Labs_42_TestME.csproj" />
     <ProjectReference Include="..\Mini_code_challenege2\Mini_code_challenege2.csproj" />

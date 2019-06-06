@@ -1,0 +1,28 @@
+﻿@model Labs_91_MVC_Core2.Models.LisModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>This is my list</h1>
+<ul>
+    @foreach (var values in ViewBag.MyList)
+    {
+        <li>@values</li>
+    }
+</ul>
+<hr/>
+<ul>
+    @foreach (var values in Model.myList1)
+    {
+        <li>@values</li>
+    }
+</ul>
+<hr/>
+<ul>
+    @foreach (var values in Model.myList2)
+    {
+        <li>@values</li>
+    }
+</ul>

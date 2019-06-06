@@ -5,6 +5,7 @@ using Mini_code_Challenge3;
 using Mini_code_challenege;
 using Mini_code_challenege2;
 using Hw_109_linq_aggregate;
+using HW_110_Stream_reader_writer;
 
 namespace Tests
 {
@@ -128,5 +129,8 @@ namespace Tests
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase()]
+
     }
 }
