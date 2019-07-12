@@ -1,0 +1,29 @@
+﻿@page
+@model FinalProject.Pages.NewUserModel
+
+<h1>Add a new User</h1>
+<hr />
+
+<form method="post">
+    <div class="form-group">
+        <input asp-for="NewUser.FirstName" type="text" class="form-control" id="FirstName" placeholder="First Name" />
+    </div>
+
+    <div class="form-group">
+        <input asp-for="NewUser.LastName" type="text" class="form-control" id="LastName" placeholder="Last Name" />
+    </div>
+
+    <div class="form-group">
+        <input asp-for="NewUser.Email" type="text" class="form-control" id="Email" placeholder="Email" />
+    </div>
+
+    <div class="form-group">
+        <input asp-for="NewUser.CohortID" type="number" class="form-control" id="CohortID" placeholder="Cohort ID" />
+    </div>
+
+    <div class="form-group">
+        <input asp-for="NewUser.RoleID" type="number" class="form-control" id="RoleID" placeholder="Role ID" />
+    </div>
+
+    <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+</form>

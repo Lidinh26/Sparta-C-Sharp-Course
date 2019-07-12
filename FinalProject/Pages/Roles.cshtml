@@ -1,0 +1,17 @@
+﻿@page
+@model FinalProject.Pages.RoleModel;
+
+<h1>Roles</h1>
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>Role ID</th>
+        <th>Role Name</th>
+    </tr>
+    @foreach (var item in Model.RoleList)
+    {
+        <tr>
+            <td>@item.RoleID</td>
+            <td>@item.RoleName</td>
+        </tr>
+    }
+</table>

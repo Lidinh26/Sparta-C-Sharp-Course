@@ -1,0 +1,17 @@
+﻿@page
+@model FinalProject.Pages.SpecialisationModel
+
+<h1>Specialisation</h1>
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>Specialisation ID</th>
+        <th>Specialisation Name</th>
+    </tr>
+    @foreach (var item in Model.SpecialisationList)
+    {
+        <tr>
+            <td>@item.SpecialisationID</td>
+            <td>@item.SpecialisationName</td>
+        </tr>
+    }
+</table>

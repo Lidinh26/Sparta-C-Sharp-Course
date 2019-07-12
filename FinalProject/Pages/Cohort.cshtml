@@ -1,0 +1,19 @@
+﻿@page
+@model FinalProject.Pages.CohortModel
+
+<h1>Cohort</h1>
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>Cohort ID</th>
+        <th>Cohort Name</th>
+        <th>Specialisation ID</th>
+    </tr>
+    @foreach (var item in Model.CohortList)
+    {
+        <tr>
+            <td>@item.CohortID</td>
+            <td>@item.CohortName</td>
+            <td>@item.SpecialisationID</td>
+        </tr>
+    }
+</table>

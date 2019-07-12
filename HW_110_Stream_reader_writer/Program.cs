@@ -52,7 +52,7 @@ namespace HW_110_Stream_reader_writer
                                   //actually an integer representing the ASCII/Unicode 
                                   //number of the letter which has been stored!!!
             var char01 = new char();
-            var sb = new StringBuilder();
+           // var sb = new StringBuilder();
             reader = new StreamReader("abc.txt");
             while (reader.Peek() != -1)
             {
@@ -61,7 +61,7 @@ namespace HW_110_Stream_reader_writer
                 char01 = (char)oneLetterCode;
                 Console.WriteLine(char01);
                 Console.WriteLine("--");
-                sb.Append(char01);
+                //sb.Append(char01);
             }
         }
     }

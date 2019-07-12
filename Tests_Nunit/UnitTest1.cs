@@ -95,9 +95,9 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(new string[] {"Hello", "You", "OK"}, new string[] {"Hello", "You", "OK", "Buddy"}, new string[] { "Hello", "You", "OK", "Buddy" })]
+        [TestCase(new string[] { "Hello", "You", "OK" }, new string[] { "Hello", "You", "OK", "Buddy" }, new string[] { "Hello", "You", "OK", "Buddy" })]
         [TestCase(new string[] { "Whats", "up", "bro" }, new string[] { "nothing", "much", "you", "know" }, new string[] { "Whats", "up", "bro", "nothing", "much", "you", "know" })]
-        [TestCase(new string[] { "It", "is", "Wednesday" }, new string[] { "It", "is", "Tuesday" }, new string[] { "It", "is", "Wednesday", "Tuesday"})]
+        [TestCase(new string[] { "It", "is", "Wednesday" }, new string[] { "It", "is", "Tuesday" }, new string[] { "It", "is", "Wednesday", "Tuesday" })]
         public void Hw_109_linq_union(string[] string1, string[] string2, string[] expected)
         {
             //act
@@ -108,9 +108,9 @@ namespace Tests
 
 
 
-        [TestCase(new string[] { "Hello", "You", "OK" }, new string[] { "Hello", "You", "OK", "Buddy" }, new string[] { "Hello", "You", "OK"})]
-        [TestCase(new string[] { "Li", "Carmen", "Pug" }, new string[] { "Li", "Carmen", "Husky" }, new string[] { "Li", "Carmen"})]
-        [TestCase(new string[] { "Sparta", "Global", "2018", "31" }, new string[] { "Sparta", "Global", "2019", "Buddy", "31" }, new string[] { "Sparta", "Global", "31"})]
+        [TestCase(new string[] { "Hello", "You", "OK" }, new string[] { "Hello", "You", "OK", "Buddy" }, new string[] { "Hello", "You", "OK" })]
+        [TestCase(new string[] { "Li", "Carmen", "Pug" }, new string[] { "Li", "Carmen", "Husky" }, new string[] { "Li", "Carmen" })]
+        [TestCase(new string[] { "Sparta", "Global", "2018", "31" }, new string[] { "Sparta", "Global", "2019", "Buddy", "31" }, new string[] { "Sparta", "Global", "31" })]
 
         public void Hw_109_linq_intersect(string[] string1, string[] string2, string[] expected)
         {
@@ -120,7 +120,7 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase(new int[] {1,2,3,4,5,6}, new int[] {1,2,3,4,5,6,7}, new int[] {1,2,3,4,5,6,7})]
+        [TestCase(new int[] { 1, 2, 3, 4, 5, 6 }, new int[] { 1, 2, 3, 4, 5, 6, 7 }, new int[] { 1, 2, 3, 4, 5, 6, 7 })]
 
         public void Hw_109_linq_projectb(int[] int1, int[] int2, int[] expected)
         {
@@ -130,7 +130,6 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCase()]
 
     }
 }

@@ -1,0 +1,28 @@
+﻿@page
+@model FinalProject.Pages.UserModel;
+
+<h1>Users</h1>
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Cohort ID</th>
+        <th>Role ID</th>
+    </tr>
+    @foreach (var item in Model.UserList)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Email</td>
+            <td>@item.CohortID</td>
+            <td>@item.RoleID</td>
+        </tr>
+    }
+</table>
+<br />
+<form action="/NewUser">
+    <input type="submit" value="Click here to add a new user" />
+</form>
+
